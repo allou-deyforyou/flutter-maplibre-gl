@@ -662,6 +662,14 @@ class MapLibreMapController extends ChangeNotifier {
         .updateMyLocationTrackingMode(myLocationTrackingMode);
   }
 
+  /// Updates user location render mode.
+  ///
+  /// The returned [Future] completes after the change has been made on the
+  /// platform side.
+  Future<void> updateMyLocationRenderMode(MyLocationRenderMode myLocationRenderMode) async {
+    return _updateMapOptions({'myLocationRenderMode': myLocationRenderMode.index});
+  }
+
   /// Updates the language of the map labels to match the device's language.
   ///
   /// The returned [Future] completes after the change has been made on the
